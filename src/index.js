@@ -15,3 +15,17 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+
+// src/index.js の末尾に追加
+function hidePreloader() {
+  const el = document.getElementById("preloader");
+  if (!el) return;
+  el.classList.add("hide");
+  setTimeout(() => el.remove(), 400);
+}
+
+if (document.readyState === "complete") {
+  hidePreloader();
+} else {
+  window.addEventListener("load", hidePreloader);
+}
