@@ -1,3 +1,8 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -11,3 +16,10 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* ===== Skills section: Bootstrap干渉を弱める（局所的） ===== */
+.skills-scope :where(*) { box-sizing: border-box; }
+.skills-scope :where(a) { all: unset; display: block; cursor: pointer; }
+.skills-scope :where(p, h1, h2, h3, h4, h5, h6) { margin: 0; }
+.skills-scope :where(ul, ol) { margin: 0; padding-left: 0; list-style: none; }
+.skills-scope :where(img) { display: block; max-width: 100%; height: auto; }
